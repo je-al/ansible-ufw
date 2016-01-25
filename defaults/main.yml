@@ -1,6 +1,7 @@
 # defaults file for ufw
 ---
 ufw_default_policy: deny
+ufw_before_filter_rules: []
 ufw_logging: 'off'
 ufw_rules:
   - rule: allow

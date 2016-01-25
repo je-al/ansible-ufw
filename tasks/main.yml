@@ -8,6 +8,15 @@
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
   tags: [configuration, ufw, ufw-install]
 
+- name: before rules
+  template:
+    src: etc/ufw/before.rules.j2
+    dest: /etc/ufw/before.rules
+    owner: root
+    group: root
+    mode: 0640
+  tags: [configuration, ufw, ufw-rules]
+
 - name: create (local facts) directory
   file:
     path: /etc/ansible/facts.d/
