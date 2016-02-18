@@ -3,6 +3,12 @@
 ufw_default_policy: deny
 ufw_before_filter_rules: []
 ufw_logging: 'off'
+# /etc/defaut/ufw settings
+ufw_ipv6: "yes"
+ufw_default_input_policy: DROP
+ufw_default_output_policy: ACCEPT
+ufw_default_forward_policy: DROP
+ufw_default_application_policy: SKIP
 ufw_rules:
   - rule: allow
     interface: eth0

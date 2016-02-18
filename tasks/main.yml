@@ -8,6 +8,16 @@
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
   tags: [configuration, ufw, ufw-install]
 
+- name: set default config
+  template:
+    src: etc/default/ufw.j2
+    dest: /etc/default/ufw
+    owner: root
+    group: root
+    mode: 0644
+  register: configuration
+  tags: [configuration, ufw, ufw-defaults]
+
 - name: before rules
   template:
     src: etc/ufw/before.rules.j2
